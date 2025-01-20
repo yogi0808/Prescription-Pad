@@ -34,7 +34,7 @@ const Pad = async ({ params }) => {
           </div>
         </div>
       </header>
-      <div className="min-h-[800] flex flex-col justify-between relative">
+      <div className="min-h-[800px] flex flex-col justify-between relative">
         <p className="text-zinc-600 capitalize">
           <span className="font-bold text-black">Patient's Name:</span>{" "}
           {name.replace("%20", " ")}
