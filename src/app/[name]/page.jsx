@@ -2,6 +2,7 @@ import React from "react"
 import EmailSvg from "@/svg/EmailSvg"
 import PhoneSvg from "@/svg/PhoneSvg"
 import { getCurrentDate } from "@/utils/helper"
+import PadBG from "@/svg/PadBG"
 
 const Pad = async ({ params }) => {
   const { name } = await params
@@ -34,17 +35,20 @@ const Pad = async ({ params }) => {
           </div>
         </div>
       </header>
-      <div className="min-h-[700px] flex flex-col justify-between relative">
-        <p className="text-zinc-600 capitalize">
-          <span className="font-bold text-black">Patient's Name:</span>{" "}
-          {name.replace("%20", " ")}
-        </p>
+      <div className="min-h-[700px] flex flex-col justify-center relative items-center">
+        <div className="h-full w-full flex flex-col justify-between absolute top-0 left-0">
+          <p className="text-zinc-600 capitalize">
+            <span className="font-bold text-black">Patient's Name:</span>{" "}
+            {name.replace("%20", " ")}
+          </p>
 
-        <div className="flex flex-col justify-center items-center gap-2 self-end w-1/3">
-          <hr className="w-full border-t-2 border-zinc-200" />
-          <p className="font-bold">Signature</p>
+          <div className="flex flex-col justify-center items-center gap-2 self-end w-1/3">
+            <hr className="w-full border-t-2 border-zinc-200" />
+            <p className="font-bold">Signature</p>
+          </div>
         </div>
-        <div className="bg-[url(/padBG.svg)] bg-center bg-contain bg-no-repeat bg-opacity-50 absolute top-0 left-0 w-full h-full opacity-[0.1] -z-[1]"></div>
+        <PadBG />
+        {/* <div className="bg-[url(/padBG.svg)] bg-center bg-contain bg-no-repeat bg-opacity-50 absolute top-0 left-0 w-full h-full opacity-[0.1] -z-[1]"></div> */}
       </div>
     </main>
   )
