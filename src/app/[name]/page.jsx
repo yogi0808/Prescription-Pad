@@ -44,7 +44,7 @@ const Pad = async ({ params }) => {
           <hr className="w-full border-t-2 border-zinc-200" />
           <p className="font-bold">Signature</p>
         </div>
-        <div className="bg-[url(/padbg.webp)] bg-center bg-contain bg-no-repeat bg-opacity-50 absolute top-0 left-0 w-full h-full opacity-[0.1] -z-[1]"></div>
+        <div className="bg-[url(/padBG.svg)] bg-center bg-contain bg-no-repeat bg-opacity-50 absolute top-0 left-0 w-full h-full opacity-[0.1] -z-[1]"></div>
       </div>
     </main>
   )
