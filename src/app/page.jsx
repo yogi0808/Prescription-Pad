@@ -17,19 +17,7 @@ const Home = () => {
       return
     }
 
-    const checkIfLoaded = () => {
-      if (page.document.readyState === "complete") {
-        page.print()
-
-        setTimeout(() => {
-          page.close()
-        }, 2000)
-      } else {
-        setTimeout(checkIfLoaded, 100)
-      }
-    }
-
-    checkIfLoaded()
+    page.print()
   }
 
   return (
