@@ -6,15 +6,24 @@ const Home = () => {
   const [name, setName] = useState("")
 
   const print = () => {
-    if (!name) {
-      alert("Enter the name first.")
+    const sanitizedName = name.replace(/[^a-zA-Z0-9-_]/g, "")
+    if (!sanitizedName || sanitizedName.trim().length < 2) {
+      alert("Please enter a valid name (at least 2 characters).")
       return
     }
 
-    const page = window.open(`/${name}`, "_blank", "width=800,height=600")
+    const page = window.open(
+      `/${sanitizedName}`,
+      "_blank",
+      "width=800,height=600"
+    )
     if (!page) {
-      console.error("there is no page to print.")
+      alert("Popup blocked! Please allow popups for this site.")
       return
+    }
+
+    page.onafterprint = () => {
+      page.close()
     }
 
     page.print()
